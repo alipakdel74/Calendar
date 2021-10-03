@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ir.uneed.calendar.databinding.ActivityMainBinding
 import ir.uneed.calender.Jdn
+import ir.uneed.calender.utils.applyOption
 import ir.uneed.calender.utils.dayOfWeekName
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +16,12 @@ class MainActivity : AppCompatActivity() {
         mainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mainBinding.root)
 
+        applyOption(
+            isShowWeekOfYearEnabled = false
+        )
+
         bringDate(Jdn.today)
+
 
         mainBinding.calendarPager.apply {
             onDayClicked = {

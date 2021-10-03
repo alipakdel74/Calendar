@@ -7,12 +7,15 @@ import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Build
 import android.util.AttributeSet
+import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import ir.uneed.calender.ArrowView
@@ -88,6 +91,11 @@ class CalendarPager(context: Context, attrs: AttributeSet? = null) : FrameLayout
     private val viewPager = ViewPager2(context)
     private var selectedJdn: Jdn? = null
 
+    @ColorInt
+    fun Context.resolveColor(attr: Int) = TypedValue().let {
+        ContextCompat.getColor(this, attr)
+    }
+
     init {
         initGlobal(context)
 
@@ -124,7 +132,7 @@ class CalendarPager(context: Context, attrs: AttributeSet? = null) : FrameLayout
         imageView.background = GradientDrawable().apply {
             shape = GradientDrawable.OVAL
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-                color = ColorStateList.valueOf(Color.parseColor("#870579"))
+                color = ColorStateList.valueOf(context.resolveColor(todayBackgroundColor))
             setSize(32.dp.toInt(), 32.dp.toInt())
         }
 

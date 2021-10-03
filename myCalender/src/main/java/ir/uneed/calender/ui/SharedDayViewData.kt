@@ -18,32 +18,35 @@ class SharedDayViewData(context: Context, height: Float) {
         paint.setShadowLayer(1f, 1f, 1f, Color.BLACK)
     }
 
-    private val typeface = Typeface.createFromAsset(context.assets, "Arabic-Regular.ttf")
+    private val typeface = Typeface.createFromAsset(context.assets, fontDate)
     private val textSize = height * 20 / 40
     private val headerTextSize = height * 12 / 40
 
-    private val colorTextDay = context.resolveColor(android.R.color.black)
-    private val colorTextDaySelected = context.resolveColor(android.R.color.white)
-    private val colorTextDayName = context.resolveColor(android.R.color.holo_blue_dark)
-    private val colorTextHoliday = context.resolveColor(android.R.color.holo_red_dark)
-
 
     val backgroundSelectedPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
-        it.style = Paint.Style.FILL
-        it.color = context.resolveColor(android.R.color.holo_green_light)
+        it.style = Paint.Style.STROKE
+        it.strokeWidth = 1.5.dp
+        it.color = context.resolveColor(colorSelectedBorder)
     }
 
     val todayBorderPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
-        it.style = Paint.Style.STROKE
-        it.strokeWidth = 1.5.dp
-        it.color = colorTextHoliday
+        it.style = Paint.Style.FILL
+        it.color = context.resolveColor(todayBackgroundColor)
+    }
+
+    val todayTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
+        it.textAlign = Paint.Align.CENTER
+        it.typeface = typeface
+        it.textSize = textSize
+        it.color = context.resolveColor(todayTextColor)
+        if (boldAllText || boldDay) addShadowIfNeeded(it)
     }
 
     val dayOfMonthNumberTextHolidayPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
         it.typeface = typeface
         it.textSize = textSize
-        it.color = colorTextHoliday
+        it.color = context.resolveColor(colorTextHoliday)
         if (boldAllText || boldDay) addShadowIfNeeded(it)
     }
 
@@ -51,14 +54,14 @@ class SharedDayViewData(context: Context, height: Float) {
         it.textAlign = Paint.Align.CENTER
         it.typeface = typeface
         it.textSize = textSize
-        it.color = colorTextDay
+        it.color = context.resolveColor(dayTextColor)
         if (boldAllText || boldDay) addShadowIfNeeded(it)
     }
     val headerTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
         it.typeface = typeface
         it.textSize = headerTextSize
-        it.color = colorTextDay
+        it.color = context.resolveColor(otherDateTextColor)
         if (boldAllText || boldDay) addShadowIfNeeded(it)
     }
 
@@ -66,14 +69,14 @@ class SharedDayViewData(context: Context, height: Float) {
         it.textAlign = Paint.Align.CENTER
         it.typeface = typeface
         it.textSize = textSize
-        it.color = colorTextDaySelected
+        it.color = context.resolveColor(dayTextColor)
         if (boldAllText || boldDay) addShadowIfNeeded(it)
     }
     val headerTextSelectedPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
         it.typeface = typeface
         it.textSize = headerTextSize
-        it.color = colorTextDaySelected
+        it.color = context.resolveColor(android.R.color.holo_orange_dark)
         if (boldAllText || boldDay) addShadowIfNeeded(it)
     }
 
@@ -81,15 +84,15 @@ class SharedDayViewData(context: Context, height: Float) {
         it.textAlign = Paint.Align.CENTER
         it.typeface = typeface
         it.textSize = headerTextSize
-        it.color = colorTextDayName
+        it.color = context.resolveColor(weekNumberTextColor)
         if (boldAllText || boldDay) addShadowIfNeeded(it)
     }
 
     val weekDayInitialsTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
         it.typeface = typeface
-        it.textSize = if (shortWeekName) height * 18 / 40 else 15.dp
-        it.color = colorTextDayName
+        it.textSize = if (shortWeekName) height * 18 / 40 else 14.dp
+        it.color = context.resolveColor(weekDaysTextColor)
 
         if (boldAllText || boldWeekName) addShadowIfNeeded(it)
     }
@@ -98,7 +101,7 @@ class SharedDayViewData(context: Context, height: Float) {
         it.textAlign = Paint.Align.CENTER
         it.typeface = typeface
         it.textSize = height * 22 / 40
-        it.color = colorTextDayName
+        it.color = context.resolveColor(footerTextColor)
         it.alpha = 90
         addShadowIfNeeded(it)
     }
