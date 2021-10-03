@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="height_month_list_item_with_weeks_label">50dp</dimen>
+    <dimen name="height_month_list_item_without_weeks_label">35dp</dimen>
+    <dimen name="text_size_month_day_label">12dp</dimen>
+    <dimen name="radius_day_number_select_circle">20dp</dimen>
+    <dimen name="radius_day_highlight_circle">2dp</dimen>
+    <dimen name="margin_day_highlight_circle">5dp</dimen>
+    <dimen name="text_size_week_title">17dp</dimen>
+    <dimen name="text_size_days_number">16dp</dimen>
+    <dimen name="size_day_notification_circle">2.5dp</dimen>
+    <dimen name="height_calendar_view">280dp</dimen>
+    <dimen name="margin_top_recyclerview">4dp</dimen>
+    <dimen name="margin_bottom_recyclerview">4dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_normal">10dp</dimen>
+</resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="shamsi_calendar">Persian Calendar</string>
+    <string name="islamic_calendar">Islamic Calendar</string>
+    <string name="gregorian_calendar">Gregorian Calendar</string>
+    <string name="shamsi_calendar_short">Persian</string>
+    <string name="islamic_calendar_short">Islamic</string>
+    <string name="gregorian_calendar_short">Gregorian</string>
+    <string name="nth_week_of_year">%1$s week of year</string>
+    <string name="week_days_name_column">%1$s column in days table</string>
+</resources>
