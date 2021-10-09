@@ -28,9 +28,6 @@ class MainActivity : AppCompatActivity() {
             onDayClicked = {
                 bringDate(it)
             }
-            onDayClicked2 = {
-                bringDate(it)
-            }
             goToThisDateBtn = {
                 bringDate(Jdn.today)
             }
