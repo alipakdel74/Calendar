@@ -34,7 +34,7 @@ class CalendarPager(context: Context, attrs: AttributeSet? = null) : FrameLayout
     var onDayClicked = fun(_: Jdn) {}
     var onDayLongClicked = fun(_: Jdn) {}
     var selectedThisMonth = fun(_: Jdn) {}
-    var goToThisDateBtn = fun(_: View) {}
+    var goToThisDateBtn = fun() {}
 
     // Selected month is visible current month of the pager, maybe a day is not selected on it yet
     var onMonthSelected = fun() {}
@@ -100,7 +100,7 @@ class CalendarPager(context: Context, attrs: AttributeSet? = null) : FrameLayout
 
         val btn = btnGoto()
         btn.setOnClickListener {
-            goToThisDateBtn.invoke(it)
+            goToThisDateBtn.invoke()
         }
 
         viewPager.adapter = PagerAdapter()
