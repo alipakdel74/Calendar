@@ -53,11 +53,6 @@ class CalendarPager(context: Context, attrs: AttributeSet? = null) : FrameLayout
         refresh()
     }
 
-    private fun initGlobal(context: Context) {
-        applyAppLanguage(context)
-        loadLanguageResources()
-    }
-
     // Public API, to be reviewed
     fun refresh(isEventsModified: Boolean = false) = pagesViewHolders
         .mapNotNull { it.get() }.forEach { it.pageRefresh(isEventsModified, selectedJdn) }
@@ -96,8 +91,6 @@ class CalendarPager(context: Context, attrs: AttributeSet? = null) : FrameLayout
     }
 
     init {
-        initGlobal(context)
-
         val btn = btnGoto()
         btn.setOnClickListener {
             goToThisDateBtn.invoke()

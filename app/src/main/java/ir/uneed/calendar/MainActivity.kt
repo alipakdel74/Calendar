@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import ir.uneed.calendar.databinding.ActivityMainBinding
 import ir.uneed.calender.Jdn
+import ir.uneed.calender.utils.Language
 import ir.uneed.calender.utils.applyOption
 import ir.uneed.calender.utils.dayOfWeekName
 
@@ -17,8 +18,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(mainBinding.root)
 
         applyOption(
-            showArrow = true,
-            shortWeekName = true
+            this,
+            showArrow = false,
+            shortWeekName = false,
+            language = Language.FA
         )
 
         bringDate(Jdn.today)

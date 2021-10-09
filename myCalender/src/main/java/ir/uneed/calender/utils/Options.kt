@@ -1,5 +1,6 @@
 package ir.uneed.calender.utils
 
+import android.content.Context
 import ir.uneed.calender.CalendarType
 
 var language = Language.FA
@@ -23,6 +24,7 @@ var colorTextHoliday:Int = android.R.color.holo_red_dark
 var colorSelectedBorder:Int = android.R.color.holo_red_dark
 
 fun applyOption(
+    context: Context,
     language: Language = Language.FA,
     shortWeekName: Boolean = false,
     isShowWeekOfYearEnabled: Boolean = false,
@@ -62,4 +64,6 @@ fun applyOption(
     ir.uneed.calender.utils.todayTextColor = todayTextColor
     ir.uneed.calender.utils.colorTextHoliday = colorTextHoliday
     ir.uneed.calender.utils.colorSelectedBorder = colorSelectedBorder
+    applyAppLanguage(context)
+    loadLanguageResources()
 }
