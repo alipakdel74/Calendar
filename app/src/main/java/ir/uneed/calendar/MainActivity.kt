@@ -17,7 +17,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(mainBinding.root)
 
         applyOption(
-            isShowWeekOfYearEnabled = false
+            showArrow = true,
+            shortWeekName = true
         )
 
         bringDate(Jdn.today)
@@ -25,6 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         mainBinding.calendarPager.apply {
             onDayClicked = {
+                bringDate(it)
+            }
+            onDayClicked2 = {
                 bringDate(it)
             }
             goToThisDateBtn = {

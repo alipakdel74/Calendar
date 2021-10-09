@@ -91,7 +91,7 @@ class SharedDayViewData(context: Context, height: Float) {
     val weekDayInitialsTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).also {
         it.textAlign = Paint.Align.CENTER
         it.typeface = typeface
-        it.textSize = if (shortWeekName) height * 18 / 40 else 14.dp
+        it.textSize = if (shortWeekName) height * 18 / 40 else {if (showArrow) 12.5.dp else 14.dp }
         it.color = context.resolveColor(weekDaysTextColor)
 
         if (boldAllText || boldWeekName) addShadowIfNeeded(it)

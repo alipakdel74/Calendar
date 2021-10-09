@@ -57,7 +57,8 @@ class DaysAdapter(
         override fun onClick(v: View) {
             val itemDayView = (v as? DayView) ?: return
             val jdn = itemDayView.jdn ?: return
-            calendarPager?.let { it.onDayClicked(jdn) }
+            calendarPager?.let { it.onDayClicked(jdn)
+            it.onDayClicked2(jdn)}
             selectDay(itemDayView.dayOfMonth)
         }
 

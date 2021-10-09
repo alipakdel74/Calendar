@@ -10,6 +10,7 @@ var showOtherCalendar = false
 var boldAllText = true
 var boldWeekName = false
 var boldDay = false
+var showArrow = true
 var fontDate: String = "Arabic-Regular.ttf"
 var footerTextColor:Int = android.R.color.holo_blue_dark
 var weekNumberTextColor:Int = android.R.color.holo_purple
@@ -30,14 +31,15 @@ fun applyOption(
     boldAllText: Boolean = true,
     boldWeekName: Boolean = false,
     boldDay: Boolean = false,
+    showArrow: Boolean = true,
     fontDate: String = "Arabic-Regular.ttf",
     footerTextColor:Int = android.R.color.holo_blue_dark,
     weekNumberTextColor:Int = android.R.color.holo_purple,
     weekDaysTextColor:Int = android.R.color.holo_purple,
     otherDateTextColor:Int = android.R.color.darker_gray,
     dayTextColor:Int = android.R.color.black,
-    todayBackgroundColor:Int = android.R.color.holo_green_dark,
-    todayTextColor:Int = android.R.color.holo_orange_dark,
+    todayBackgroundColor:Int = android.R.color.holo_orange_dark,
+    todayTextColor:Int = android.R.color.white,
     colorTextHoliday:Int = android.R.color.holo_red_dark,
     colorSelectedBorder:Int = android.R.color.holo_red_dark,
 ) {
@@ -49,6 +51,7 @@ fun applyOption(
     ir.uneed.calender.utils.boldAllText = boldAllText
     ir.uneed.calender.utils.boldWeekName = boldWeekName
     ir.uneed.calender.utils.boldDay = boldDay
+    ir.uneed.calender.utils.showArrow = showArrow
     ir.uneed.calender.utils.fontDate = fontDate
     ir.uneed.calender.utils.footerTextColor = footerTextColor
     ir.uneed.calender.utils.weekNumberTextColor = weekNumberTextColor

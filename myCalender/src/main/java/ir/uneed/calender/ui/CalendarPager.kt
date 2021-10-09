@@ -155,15 +155,21 @@ class CalendarPager(context: Context, attrs: AttributeSet? = null) : FrameLayout
 
         override fun getItemCount() = monthsLimit
 
-        private val sharedDayViewData = SharedDayViewData(context, 40.sp)
-
         inner class ViewHolder(private val binding: FragmentMonthBinding) :
             RecyclerView.ViewHolder(binding.root) {
 
             var pageRefresh = fun(_: Boolean, _: Jdn?) {}
 
             init {
-                binding.monthView.initialize(sharedDayViewData, this@CalendarPager)
+                binding.monthView.initialize(SharedDayViewData(context, 40.sp), this@CalendarPager)
+
+                if (showArrow) {
+                    binding.previous.visibility = View.VISIBLE
+                    binding.next.visibility = View.VISIBLE
+                } else {
+                    binding.previous.visibility = View.GONE
+                    binding.next.visibility = View.GONE
+                }
 
                 binding.previous.let {
                     it.rotateTo(ArrowView.Direction.START)

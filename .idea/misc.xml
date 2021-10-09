@@ -12,6 +12,7 @@
         <entry key="calender/src/main/res/drawable/ic_arrow_down_24.xml" value="0.5104166666666666" />
         <entry key="calender/src/main/res/drawable/ic_back_arrow.xml" value="0.5104166666666666" />
         <entry key="calender/src/main/res/layout/fragment_month.xml" value="0.4901041666666667" />
+        <entry key="myCalender/src/main/res/layout/fragment_month.xml" value="0.4901041666666667" />
       </map>
     </option>
   </component>
